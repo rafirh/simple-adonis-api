@@ -20,4 +20,6 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.get('/book', 'BookController.index')
+Route.group(() => {
+  Route.get('/book', 'BookController.index')
+}).prefix('/api/v1')

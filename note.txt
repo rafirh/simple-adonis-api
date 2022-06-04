@@ -6,3 +6,12 @@ SIMPLE REST API:
     5. adonis make:controller (nama-controller) // digunakan utuk membuat controller baru
     6. adonis make:model -c // digunakan untuk membuat model sekaligus controllernya
     7. adonis migration:refresh digunakan untuk menghapus semua tabel dan membuat ulang tabel lagi
+
+SYNCHROUNUS DAN ASYNCHROUNUS:
+    1. Ini adalah suatu istilah yang wajib diketahui programmer.
+    2. Synchrounus atau bisa disebut BLOCKING adalah sifat suatu bahasa pemrograman yang mengeksekusi code programnya berurutan dari baris paliang atas sampai ke bawah.
+    3. Asynchrounus atau bisa disebut NON-BLOCKING adalah sifat suatu bahasa pemrograman yang mengeksekusi code programnya tidak selalu berurutan berdasarkan urutan baris tetapi berdasarkan waktu proses, jadi semua code program akan dijalankan bersama.
+    4. Salah satu contoh bahasa pemrograman asyncronus adalah JavaScript, jadi jika kita ingin membuat code java script menjadi synchrounus kita bisa menggunakan function callback, promise, dan asyn / await.
+
+CALLBACK FUNCTION:
+    1. 
