@@ -1,0 +1,8 @@
+SIMPLE REST API:
+    1. adonis new (name-project) --api-only // perintah yang digumakan untuk membuat project adonis dengan type api saja
+    2. adonis make:migration (nama-tabel) // perintah yang digunakan untuk membuat migration baru
+    3. adonis migration:run // perintah yang digunakan untuk migrasi database, jangan lupa install mysql dulu sebelum menjalankan perintah tersebut
+    4. adonis make:model (nama-model) // digunakan  untuk membuat model baru
+    5. adonis make:controller (nama-controller) // digunakan utuk membuat controller baru
+    6. adonis make:model -c // digunakan untuk membuat model sekaligus controllernya
+    7. adonis migration:refresh digunakan untuk menghapus semua tabel dan membuat ulang tabel lagi
