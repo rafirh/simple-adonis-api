@@ -10,86 +10,23 @@
 const Book = use('App/Models/Book')
 
 class BookController {
-  /**
-   * Show a list of all books.
-   * GET books
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-
   async index ({ request, response, view }) {
-    return response.json(await Book.all())
+    return response.status(200).json(await Book.all())
   }
 
-  /**
-   * Render a form to be used for creating a new book.
-   * GET books/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
-  }
-
-  /**
-   * Create/save a new book.
-   * POST books
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
   async store ({ request, response }) {
+    const input = request.only(['title', 'year'])
+    const book = await Book.create(input)
+    return response.status(200).json(await book)
   }
 
-  /**
-   * Display a single book.
-   * GET books/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
   async show ({ params, request, response, view }) {
+    return response.status(200).json(await Book.findBy('id', params.id))
   }
 
-  /**
-   * Render a form to update an existing book.
-   * GET books/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
-  }
-
-  /**
-   * Update book details.
-   * PUT or PATCH books/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
   async update ({ params, request, response }) {
   }
 
-  /**
-   * Delete a book with id.
-   * DELETE books/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
   async destroy ({ params, request, response }) {
   }
 }

@@ -22,4 +22,5 @@ Route.get('/', () => {
 
 Route.group(() => {
   Route.get('/book', 'BookController.index')
+  Route.post('/book', 'BookController.store')
 }).prefix('/api/v1')
