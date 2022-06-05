@@ -21,6 +21,9 @@ Route.get('/', () => {
 })
 
 Route.group(() => {
-  Route.get('/book', 'BookController.index')
-  Route.post('/book', 'BookController.store')
+  Route.get('/books', 'BookController.index')
+  Route.get('/books/:id', 'BookController.show')
+  Route.post('/books', 'BookController.store')
+  Route.put('/books', 'BookController.update')
+  Route.delete('/books', 'BookController.destroy')
 }).prefix('/api/v1')
