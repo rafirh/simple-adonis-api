@@ -13,5 +13,18 @@ SYNCHROUNUS DAN ASYNCHROUNUS:
     3. Asynchrounus atau bisa disebut NON-BLOCKING adalah sifat suatu bahasa pemrograman yang mengeksekusi code programnya tidak selalu berurutan berdasarkan urutan baris tetapi berdasarkan waktu proses, jadi semua code program akan dijalankan bersama.
     4. Salah satu contoh bahasa pemrograman asyncronus adalah JavaScript, jadi jika kita ingin membuat code java script menjadi synchrounus kita bisa menggunakan function callback, promise, dan asyn / await.
 
-CALLBACK FUNCTION:
-    1. 
+CALLBAC:
+    1. Callback sebenarnya adalah function bedanya dengan function pada umumnya adalah cara di eksekusinya function ini.
+    2. Function callback dieksekusi di dalam function lain melalui parameter. Contoh code:
+        function sum(a, b, callBack){
+            console.log(a + b)
+            callBack()
+        }
+        function greeting(){
+            console.log('Hello callBack')
+        }
+        sum(1, 2, greeting)
+
+        Output:
+            3
+            Hello callBack
