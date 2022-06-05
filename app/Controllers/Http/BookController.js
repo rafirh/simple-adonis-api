@@ -10,6 +10,7 @@
 const Book = use('App/Models/Book')
 
 class BookController {
+  
   async index({ request, response, view }) {
     return response.status(200).json(await Book.all())
   }
