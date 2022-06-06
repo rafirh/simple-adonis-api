@@ -7,6 +7,9 @@
 /**
  * Resourceful controller for interacting with authors
  */
+
+const Author = use('App/Models/Author')
+
 class AuthorController {
   /**
    * Show a list of all authors.
@@ -18,6 +21,7 @@ class AuthorController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+
   }
 
   /**
@@ -30,6 +34,7 @@ class AuthorController {
    * @param {View} ctx.view
    */
   async create ({ request, response, view }) {
+    
   }
 
   /**
@@ -41,6 +46,8 @@ class AuthorController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const author = await Author.create(request.only(['name']))
+    return response.status(200).json(await author)
   }
 
   /**

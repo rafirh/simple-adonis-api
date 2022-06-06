@@ -21,9 +21,17 @@ Route.get('/', () => {
 })
 
 Route.group(() => {
-  Route.get('/books', 'BookController.index')
-  Route.get('/books/:id', 'BookController.show')
-  Route.post('/books', 'BookController.store')
-  Route.put('/books', 'BookController.update')
-  Route.delete('/books', 'BookController.destroy')
-}).prefix('/api/v1')
+  Route.get('/', 'BookController.index')
+  Route.get('/:id', 'BookController.show')
+  Route.post('/', 'BookController.store')
+  Route.put('/', 'BookController.update')
+  Route.delete('/', 'BookController.destroy')
+}).prefix('/api/v1/books')
+
+Route.group(() => {
+  Route.get('/', 'AuthorController.index')
+  Route.get('/:id', 'AuthorController.show')
+  Route.post('/', 'AuthorController.store')
+  Route.put('/', 'AuthorController.update')
+  Route.delete('/', 'AuthorController.destroy')
+}).prefix('/api/v1/authors')

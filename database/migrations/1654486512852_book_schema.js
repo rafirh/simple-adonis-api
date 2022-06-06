@@ -7,9 +7,9 @@ class BookSchema extends Schema {
   up () {
     this.create('books', (table) => {
       table.increments()
-      table.integer('author_id',25).unsigned().references('id').inTable('authors')
-      table.string('title',255)
-      table.integer('year',4)
+      table.string('title')
+      table.integer('year')
+      table.integer('author_id').unsigned().index().references('authors','id')
       table.timestamps()
     })
   }

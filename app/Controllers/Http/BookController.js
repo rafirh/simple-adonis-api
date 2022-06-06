@@ -10,13 +10,13 @@
 const Book = use('App/Models/Book')
 
 class BookController {
-  
+
   async index({ request, response, view }) {
-    return response.status(200).json(await Book.all())
+    return response.status(200).json(await Book.query().with('authors').fetch())
   }
 
   async store({ request, response }) {
-    const book = await Book.create(request.only(['title', 'year']))
+    const book = await Book.create(request.only(['title', 'year','author_id']))
     return response.status(200).json(await book)
   }
 
@@ -26,7 +26,7 @@ class BookController {
 
   async update({ params, request, response }) {
     const id = request.input('id')
-    const data = request.only(['title','year'])
+    const data = request.only(['title','year','author_id'])
     const book = await Book.query().where('id', id).update(data)
     if (book) {
       return response.status(200).json({
